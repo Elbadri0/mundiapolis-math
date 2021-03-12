@@ -5,8 +5,6 @@ def shape(matrix):
         shape.append(len(matrix[0]))
         matrix = matrix[0]
     return shape
-
-
 def rec_cat_matrices(mat1, mat2, axis, depth):
     matrix = []
     if depth == axis:
@@ -15,8 +13,6 @@ def rec_cat_matrices(mat1, mat2, axis, depth):
     for i in range(len(mat1)):
         matrix.append(rec_cat_matrices(mat1[i], mat2[i], axis, depth + 1))
     return matrix
-
-
 def cat_matrices(mat1, mat2, axis=0):
     shape1 = shape(mat1)
     shape2 = shape(mat2)
