@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Contains the add_matrices function"""
+"""add_matrices function"""
 
 
 def shape(matrix):
