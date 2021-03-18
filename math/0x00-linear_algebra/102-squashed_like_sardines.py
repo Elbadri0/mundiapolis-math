@@ -1,55 +1,40 @@
 #!/usr/bin/env python3
-""" add n dimension matrices that have the same shape"""
+"""
+concatenates two matrices
+"""
 
 
-def shape(matrix):
-    """ return the shape of a matrix
-    input:
-        matrix: Given matrix
-    Return:
-        the shape of the matrix: ndim
+def matrix_shape(matrix):
     """
-    if type(matrix[0]) != list:
+    enter a matrix
+    Returns the shape as a list of integers
+    """
+    if type(matrix[0]) is not list:
         return [len(matrix)]
     else:
-        return [len(matrix)] + shape(matrix[0])
+        return [len(matrix)] + matrix_shape(matrix[0])
 
 
-def rec_matrix(mat1, mat2, rank, axis=0):
-    """ recursively operate a concatenation of a n matrix
-        input:
-            mat1, mat2: Given matrix
-            axis: Given axis
-            rank: Given rank to check if it is in the same
-            axis mat1 and mat2
-        Return:
-            the concatenation of mat1, mat2 iterating recursively: ndim
-        """
-    new_mat = []
-    if (type(mat1[0]) and type(mat2[0])) and rank == axis:
-        new_mat = [y for x in [mat1, mat2] for y in x]
-        return new_mat
-    else:
-        for x in range(len(mat1)):
-            if type(mat1[x]) == list:
-                new_mat = [sum(x) for x in zip(rec_matrix(mat1[x],
-                                                          mat2[x],
-                                                          rank + 1,
-                                                          axis))]
-            return new_mat
+def concat_recursive(mat1, mat2, axe):
+    """
+    enter a matrix
+    Returns a concatenated matrix
+    """
+    result = []
+    if axe == 0:
+        result = mat1 + mat2
+        return result
+    for i in range(len(mat1)):
+        result.append(concat_recursive(mat1[i], mat2[i], axe - 1))
+    return result
 
 
 def cat_matrices(mat1, mat2, axis=0):
-    """ concatenate n dimesnional matrices with the same shape
-    input:
-        mat1, mat2: Given matrix
-        axis: given axis
-    Return:
-        new_mat: Recursively concatenation of mat1 and mat2
     """
-    if shape(mat1) != shape(mat2):
-        return None
+    enter a matrix
+    Returns the resulting matrix
+    """
+    if len(matrix_shape(mat1)) > axis and len(matrix_shape(mat2)) > axis:
+        return concat_recursive(mat1, mat2, axis)
     else:
-        rank = 0
-        new_mat = rec_matrix(mat1, mat2, rank, axis)
-        return new_mat
+        return None
