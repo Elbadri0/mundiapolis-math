@@ -6,7 +6,7 @@ concatenating
 
 def cat_arrays(arr1, arr2):
     """
-    entre a matrix 
+    entre a matrix
     and Returns a list of arrays concatenated
     """
     concated = arr1.copy()
