@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
+"""
+multiplies two matrices with numpy with slices
+"""
 
 
 def np_slice(matrix, axes={}):
+    """
+    enter a matrix
+    and Returns the result
+    """
     sliced = []
     max_key = max(axes)
     for i in range(max_key + 1):
