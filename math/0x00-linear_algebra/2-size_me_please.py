@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""
-Module to calculate the shape of a matrix
-"""
+    """
+    how calculate the shape
+    """
 
 
 def matrix_shape(matrix):
     """
-    Needs a matrix as input
-    Returns the shape as a list of integers
+ enter matrix
+ and Returns the shapein a list
     """
     if type(matrix[0]) is not list:
         return [len(matrix)]
