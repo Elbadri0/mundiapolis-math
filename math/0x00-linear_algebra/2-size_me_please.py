@@ -6,8 +6,8 @@
 
 def matrix_shape(matrix):
     """
- enter matrix
- and Returns the shapein a list
+    enter matrix
+    and Returns the shapein a list
     """
     if type(matrix[0]) is not list:
         return [len(matrix)]
