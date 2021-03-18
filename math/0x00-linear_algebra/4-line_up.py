@@ -7,7 +7,7 @@ calculate the sum of two arrays
 def add_arrays(arr1, arr2):
     """
     entre the matrix
-    and Returns the sum 
+    and Returns the sum
     """
     if len(arr1) != len(arr2):
         return None
