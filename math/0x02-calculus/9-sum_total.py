@@ -7,12 +7,6 @@ Calculates the sum of i to the power of 2 from i equals 1 to n.
 def summation_i_squared(n):
     '''
     Calculates the sum of i to the power of 2 from i equals 1 to n.
-
-    Args:
-        n: upper bound summation.
-
-    Returns:
-        the sum of i to the power of 2 from i equals 1 to n
     '''
 
     if not isinstance(n, int) or n <= 0:
