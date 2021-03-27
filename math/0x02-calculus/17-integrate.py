@@ -9,10 +9,6 @@ def poly_integral(poly, C=0):
     Args:
         poly: List of coefficients representing a polynomial.
         C: Integer representing the integration constant.
-
-    Returns:
-        List of coefficients representing the integral of the polynomial.
-        If poly or C are not valid, return None.
     '''
 
     if not isinstance(poly, list) or len(poly) == 0:
