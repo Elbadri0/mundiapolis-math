@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-'''Module for the binomial class.
+'''binomial class.
 '''
 
 
 class Binomial():
-    '''Representation of a binomial distribution.
+    '''binomial distribution.
     '''
 
     def __init__(self, data=None, n=1, p=0.5):
-        '''Binomial class constructor.
-
-        Args.
-            data: List of the data to be used to estimate the distribution
-            n: Number of Bernoulli trials
-            p: Probability of a success
+        '''Binomial class
         '''
 
         if data is None:
@@ -35,13 +30,7 @@ class Binomial():
             self.p = float(mean / self.n)
 
     def factorial(self, k):
-        '''Calculates the factorial of a given number
-
-        k:
-            Integer.
-
-        Returns:
-            Factorial of k.
+        '''Calculates the factorial
         '''
 
         if k == 0:
@@ -50,13 +39,7 @@ class Binomial():
             return k * self.factorial(k - 1)
 
     def pmf(self, k):
-        '''Calculates the value of the PMF for a given number of “successes”
-
-        Args.
-            k: number of “successes”
-
-        Returns.
-            The PMF value for k
+        '''Calculates the value of the PMF
         '''
 
         if not isinstance(k, int):
@@ -71,12 +54,6 @@ class Binomial():
 
     def cdf(self, k):
         '''Calculates the value of the CDF for a given number of “successes”
-
-        Args.
-            k: Number of "successes"
-
-        Returns.
-            The CDF value for k
         '''
 
         if not isinstance(k, int):
