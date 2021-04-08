@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
-'''Module with Poisson class.
+'''Poisson class
 '''
 
 
 class Poisson():
-    '''Represents a Poisson distribution.
+    '''Poisson distribution
     '''
 
     e = 2.7182818285
 
     def __init__(self, data=None, lambtha=1.):
-        '''Initialize class.
-
-        Args:
-            data:
-                List of the data to be used to estimate the distribution.
-            lambtha:
-                Expected number of occurences in a given time frame.
+        '''Initialize class
         '''
 
         if data is None:
@@ -33,13 +27,7 @@ class Poisson():
                 self.lambtha = float(sum(data) / len(data))
 
     def factorial(self, k):
-        '''Calculates the factorial of a given number
-
-        k:
-            Integer.
-
-        Returns:
-            Factorial of k.
+        '''Calculates the factorial
         '''
 
         if k == 0:
@@ -48,11 +36,7 @@ class Poisson():
             return k * self.factorial(k - 1)
 
     def pmf(self, k):
-        '''Calculates the value of the PMF for a given number of “successes”.
-
-        Args:
-            k:
-                Number of successes
+        '''Calculates the value of the PMF 
         '''
 
         if not isinstance(k, int):
@@ -63,11 +47,7 @@ class Poisson():
                 / self.factorial(k))
 
     def cdf(self, k):
-        '''Calculates the value of the CDF for a given number of “successes”.
-
-        Args:
-            k:
-                Number of successes
+        '''Calculates the value of the CDF
         '''
 
         if not isinstance(k, int):
