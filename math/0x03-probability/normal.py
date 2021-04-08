@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-'''Module for a Normal distribution.
+'''Normal distribution.
 '''
 
 
 class Normal():
-    '''Class representing a Normal distribution.
+    '''Class of Normal distribution.
     '''
 
     e = 2.7182818285
     pi = 3.1415926536
 
     def __init__(self, data=None, mean=0., stddev=1.):
-        '''Normal class constructor.
-
-        Args.
-            data: List of the data to be used to estimate the distribution.
-            mean: Mean of the distribution.
-            stddev: Standard deviation of the distribution.
+        '''Normal class
         '''
 
         if data is None:
@@ -36,13 +31,7 @@ class Normal():
             self.stddev = float((variance / len(data)) ** 0.5)
 
     def factorial(self, k):
-        '''Calculates the factorial of a given number
-
-        k:
-            Integer.
-
-        Returns:
-            Factorial of k.
+        '''Calculates the factorial
         '''
 
         if k == 0:
@@ -51,34 +40,19 @@ class Normal():
             return k * self.factorial(k - 1)
 
     def z_score(self, x):
-        '''Calculates the z-score of a given x-value.
-
-        Args.
-            x: Value used to calculate the z-score.
-
-        Returns.
-            The calculated z-value.
+        '''Calculates the z-score
         '''
 
         return float((x - self.mean) / self.stddev)
 
     def x_value(self, z):
-        '''Calculates the x-value of a given z-score.
-
-        Args.
-            z: Value used to calculate the x-score.
+        '''Calculates the x-value 
         '''
 
         return float((self.stddev * z) + self.mean)
 
     def pdf(self, x):
-        '''Calculates the value of the PDF for a given x-value.
-
-        Args.
-            x: the x-value used to calculate the PDF.
-
-        Returns.
-            The PDf value for x.
+        '''Calculates the value of the PDF
         '''
 
         dividend = (self.e ** ((-1 * ((x - self.mean) ** 2))
@@ -87,13 +61,7 @@ class Normal():
         return float(dividend / divisor)
 
     def cdf(self, x):
-        '''Calculates the value of the CDF for a given x-value.
-
-        Args.
-            x: the x-value used to calculate the CDF.
-
-        Returns.
-            The CDf value for x.
+        '''Calculates the value of the CDF
         '''
 
         if x == 0:
