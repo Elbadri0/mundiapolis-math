@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-'''Normal distribution.
+'''Normal distribution
 '''
 
 
 class Normal():
-    '''Class of Normal distribution.
+    '''Class of Normal distribution
     '''
 
     e = 2.7182818285
@@ -46,7 +46,7 @@ class Normal():
         return float((x - self.mean) / self.stddev)
 
     def x_value(self, z):
-        '''Calculates the x-value 
+        '''Calculates the x-value
         '''
 
         return float((self.stddev * z) + self.mean)
