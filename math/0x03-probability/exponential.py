@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
-'''Exponential class module
+'''Exponential class
 '''
 
 
 class Exponential():
-    '''Represents an exponential distribution
+    '''exponential distribution
     '''
 
     e = 2.7182818285
 
     def __init__(self, data=None, lambtha=1.):
-        '''Contstructor for class Exponential.
-
-        Args:
-            data: List of data to be used to estimate the distribution.
-            lambtha: Expected number of occurences in a given time frame.
+        '''class Exponential
         '''
 
         if data is None:
@@ -30,11 +26,7 @@ class Exponential():
             self.lambtha = float(1 / (sum(data) / len(data)))
 
     def pdf(self, x):
-        '''Calculates the value of the PDF for a given number of “successes”.
-
-        Args:
-            x:
-                Number of successes
+        '''Calculates the value of the PDF
         '''
 
         if x < 0:
@@ -42,11 +34,7 @@ class Exponential():
         return self.lambtha * (self.e ** ((-1) * self.lambtha * x))
 
     def cdf(self, x):
-        '''Calculates the value of the CDF for a given number of “successes”.
-
-        Args:
-            x:
-                Number of successes
+        '''Calculates the value of the CDF
         '''
 
         if x < 0:
